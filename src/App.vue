@@ -2,41 +2,31 @@
   <v-app>
     <v-app-bar
       app
-      color="secondary"
+      color="#37b088"
       dark
     >
-      <div class="d-flex align-center">
+      <div class="d-flex align-center" style="padding-top: 20px">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="@/assets/science.png"
           transition="scale-transition"
-          width="40"
+          width="70"
         />
         
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <h2>All You Can Convert</h2>
       </div>
-      <router-link to="/">Home</router-link> | 
-      <router-link to="/about">About</router-link> | 
-
+      <template v-slot:extension>
+        <v-tabs align-with-title>
+          <v-tab to="/">Home</v-tab>
+          <v-tab to="/temperature">Temperature</v-tab>
+          <v-tab to="/speed">Speed</v-tab>
+          <v-tab to="/weight">Weight</v-tab>
+          <v-tab to="/time">Time</v-tab>
+        </v-tabs>
+      </template>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -53,5 +43,8 @@ export default {
   data: () => ({
     //
   }),
+  methods: {
+
+  }
 };
 </script>

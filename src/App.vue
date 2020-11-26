@@ -21,7 +21,7 @@
         <v-tabs align-with-title>
           <v-tab to="/">Home</v-tab>
           <v-tab to="/temperature">Temperature</v-tab>
-          <v-tab to="/speed">Speed</v-tab>
+          <v-tab to="/length">Length</v-tab>
           <v-tab to="/weight">Weight</v-tab>
           <v-tab to="/time">Time</v-tab>
         </v-tabs>

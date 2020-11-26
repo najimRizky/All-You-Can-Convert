@@ -24,7 +24,7 @@
           <v-btn elevation="6" width="300px" height="50px" to="/temperature" dark color="#b03749"> <v-img src="@/assets/suhu.png" max-width="30" /> Convert Temperature</v-btn>
         </v-col>
         <v-col  align="center">
-          <v-btn elevation="6" width="300px" height="50px" to="/speed" dark color="#34ad2b"> <v-img src="@/assets/speedo.png" max-width="30" />Convert Speed</v-btn>
+          <v-btn elevation="6" width="300px" height="50px" to="/speed" dark color="#34ad2b"> <v-img src="@/assets/speedo.png" max-width="30" />Convert Length</v-btn>
         </v-col>
       </v-row>
       <v-row>

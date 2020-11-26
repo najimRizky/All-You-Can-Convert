@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
 import Temperature from '../views/Temperature.vue'
-import Speed from '../views/Speed.vue'
+import Length from '../views/Length.vue'
 import Time from '../views/Time.vue'
 import Weight from '../views/Weight.vue'
 
@@ -25,9 +25,9 @@ const routes = [
     name: 'Weight',
     component: Weight
   },{
-    path: '/speed',
-    name: 'Speed',
-    component: Speed
+    path: '/length',
+    name: 'Length',
+    component: Length
   },
   {
     path: '/time',

@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="#37b088"
+      src="@/assets/bgHeader.png"
       dark
     >
       <div class="d-flex align-center" style="padding-top: 20px">
@@ -26,25 +26,24 @@
           <v-tab to="/time">Time</v-tab>
         </v-tabs>
       </template>
-      <v-spacer></v-spacer>
+
     </v-app-bar>
 
     <v-main>
     <router-view/>
     </v-main>
+      
+        <Sosmed/>
   </v-app>
 </template>
 
 <script>
+  import Sosmed from '@/components/Sosmed.vue'
 
 export default {
   name: 'App',
-
-  data: () => ({
-    //
-  }),
-  methods: {
-
+  components:{
+    Sosmed
   }
 };
 </script>

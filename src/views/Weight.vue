@@ -16,10 +16,10 @@
       </v-row>
       <v-row>
         <v-col>
-          <v-select id="dari" :items="items1" label="From" solo v-model="dari"></v-select>
+          <v-select :items="items1" label="From" solo v-model="dari"></v-select>
         </v-col>
         <v-col>
-          <v-select id="ke" :items="items2" label="To" solo v-model="ke"></v-select>
+          <v-select :items="items2" label="To" solo v-model="ke"></v-select>
         </v-col>
       </v-row>
     </v-container>
@@ -29,17 +29,43 @@
 <script>
   export default {
     data: () => ({
-      items1: ['Ton', 'Kilogram', 'Gram', 'Pound', 'Ons'],
-      items2: ['Ton', 'Kilogram', 'Gram', 'Pound', 'Ons'],
+      items1: ['Tonne', 'Kilogram', 'Gram', 'Pound', 'Ounce'],
+      items2: ['Tonne', 'Kilogram', 'Gram', 'Pound', 'Ounce'],
       weiAwal: '',
-      dari: '',
-      ke: ''
+      dari: 'A',
+      ke: 'B'
     }),
     methods: {
       convert: function(){
-        let temp;
-        temp = parseInt(this.weiAwal);
-        return temp;
+        let result;
+        if(this.dari == this.ke) result = parseFloat(this.weiAwal);
+        else if(this.dari == 'Tonne'){
+          if(this.ke == 'Kilogram') result = parseFloat(this.weiAwal)*1000;
+          if(this.ke == 'Gram') result = parseFloat(this.weiAwal)*1e+6;
+          if(this.ke == 'Pound') result = parseFloat(this.weiAwal)*2204.62;
+          if(this.ke == 'Ounce') result = parseFloat(this.weiAwal)*35274;
+        }else if(this.dari == 'Kilogram'){
+          if(this.ke == 'Tonne') result = parseFloat(this.weiAwal)/1000;
+          if(this.ke == 'Gram') result = parseFloat(this.weiAwal)*1000;
+          if(this.ke == 'Pound') result = parseFloat(this.weiAwal)*2.205;
+          if(this.ke == 'Ounce') result = parseFloat(this.weiAwal)*35.274;
+        }else if(this.dari == 'Gram'){
+          if(this.ke == 'Tonne') result = parseFloat(this.weiAwal)/1e+6;
+          if(this.ke == 'Kilogram') result = parseFloat(this.weiAwal)/1000;
+          if(this.ke == 'Pound') result = parseFloat(this.weiAwal)/454;
+          if(this.ke == 'Ounce') result = parseFloat(this.weiAwal)/28.35;
+        }else if(this.dari == 'Pound'){
+          if(this.ke == 'Tonne') result = parseFloat(this.weiAwal)/2205;
+          if(this.ke == 'Kilogram') result = parseFloat(this.weiAwal)/2.205;
+          if(this.ke == 'Gram') result = parseFloat(this.weiAwal)*454;
+          if(this.ke == 'Ounce') result = parseFloat(this.weiAwal)*16;
+        }else if(this.dari == 'Ounce'){
+          if(this.ke == 'Tonne') result = parseFloat(this.weiAwal)/35274;
+          if(this.ke == 'Kilogram') result = parseFloat(this.weiAwal)/35.274;
+          if(this.ke == 'Pound') result = parseFloat(this.weiAwal)/16;
+          if(this.ke == 'Gram') result = parseFloat(this.weiAwal)*28.35;
+        }
+        return result;
       }
     }
   }

@@ -73,7 +73,11 @@
             result = ((parseFloat(this.suhuAwal) - - 273.15 ) * 9 / 5 ) + 32;
           }
         }
-        return result;
+        if(result == 0){
+          return 0;
+        }else{
+          return result;
+        }
       }
     }
   }
